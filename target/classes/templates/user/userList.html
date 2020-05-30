@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">
+	<link rel="stylesheet" type="text/css" th:href="@{/static/layui/css/layui.css}">
+</head>
+
+<body class="yBody">
+	<form class="layui-form">
+		<!-- 放置隐藏条件,重置清空 .layui-inline 下 name属性值 -->
+		<div class="hide-condition">
+
+		</div>
+		<!-- 条件搜索 start -->
+		<div class="layui-inline">
+			<label class="layui-form-label">姓名</label>
+			<div class="layui-input-inline" style="width: 140px;">
+				<input type="text" name="name" class="layui-input" autocomplete="off">
+			</div>
+		</div>
+		<button type="button" class="layui-btn layui-btn-normal operationBtn" operationtype="reload">
+			<i class="layui-icon">&#xe615;</i>
+		</button>
+		<button type="button" class="layui-btn operationBtn" operationtype="reset">
+			<i class="layui-icon">&#xe669;</i>
+		</button>
+		<!-- 条件搜索 end -->
+
+		<!-- 功能 start -->
+		<div class="layui-btn-group rightBtn">
+			<button type="button" class="layui-btn operationBtn" operationtype="add">增加</button>
+			<button type="button" class="layui-btn operationBtn" operationtype="edit">编辑</button>
+			<button type="button" class="layui-btn operationBtn" operationtype="delList">批量删除</button>
+		</div>
+		<!-- 功能 end -->
+		<table class="layui-hide" id="ytable" lay-filter="test"></table>
+	</form>
+</body>
+<!-- 根路径 -->
+<script type="text/javascript" th:inline="javascript">
+    /*<![CDATA[*/
+    ctxPath = /*[[@{/}]]*/ '';
+    /*]]>*/
+</script>
+<script th:src="@{/static/layui/layui.js}" charset="utf-8"></script>
+<script th:src="@{/static/js/user/userList.js}" charset="utf-8"></script>
+</html>
